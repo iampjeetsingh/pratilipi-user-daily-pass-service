@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "bc4f925d-5cb9-4ac4-a78e-f9d5f39cc7b2",
+		"name": "pratilipi-user-daily-pass-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/user/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/user/all",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"user",
+						"all"
+					]
+				},
+				"description": "Lists all the users in the database."
+			},
+			"response": []
+		},
+		{
+			"name": "/user/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test User\",\n    \"email\": \"test@pratilipi.com\",\n    \"password\": \"test12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/user/register",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				},
+				"description": "This api allows us to register a user into the system."
+			},
+			"response": []
+		},
+		{
+			"name": "/daily-pass/unlock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"\",\n    \"series_id\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/daily-pass/unlock",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"daily-pass",
+						"unlock"
+					]
+				},
+				"description": "This api unlocks a new chapter in the given series for a particular user."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "https://pratilipi-user-daily-pass-serv.herokuapp.com",
+			"type": "default"
+		}
+	]
+}
